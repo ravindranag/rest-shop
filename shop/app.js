@@ -2,8 +2,7 @@ const express = require('express')
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 
-mongoose.connect(
-    'mongodb+srv://ravindra:ubuntu@cluster0.8niho.mongodb.net/rest-shop?retryWrites=true&w=majority')
+mongoose.connect(process.env.MONGO_DB_URI)
 
 const productRoutes = require('../api/routes/products')
 const orderRoutes = require('../api/routes/orders')
